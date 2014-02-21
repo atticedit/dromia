@@ -17,6 +17,8 @@ gem 'uglifier', '2.1.1'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+gem 'haml-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '3.0.4'
 
@@ -36,6 +38,10 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'rspec'
   gem 'rspec-rails'
+end
+
+group :test do
+  gem 'launchy'
 end
 
 # Use ActiveModel has_secure_password
