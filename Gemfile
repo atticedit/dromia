@@ -41,6 +41,7 @@ group :test, :development do
 end
 
 group :test do
+  gem 'email_spec'
   gem 'launchy'
 end
 
