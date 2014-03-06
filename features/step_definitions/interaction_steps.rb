@@ -23,8 +23,3 @@ Then(/^I should see "(.*?)" within the palindromes display area$/) do |text|
     page.should have_content(text)
   end
 end
-
-Then(/^there should be a palindrome "(.*?)" in the database$/) do |text|
-  palindrome_count = Palindrome.where(body: text).count
-  palindrome_count.should == 1
-end

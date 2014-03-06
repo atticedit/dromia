@@ -13,7 +13,6 @@ Feature: Submit a palindrome
     When I go to the homepage
     Then I should see "Enter your palindrome"
     When I fill in "Enter your palindrome" with "Do geese see God?"
-    And I press "Submit"
+      And I press "Submit"
     Then I should see "Your palindrome has been submitted"
-    And there should be a palindrome "Do geese see God?" in the database
-    And I should see "Do geese see God?" within the palindromes display area
+      And I should see "Do geese see God?" within the palindromes display area
