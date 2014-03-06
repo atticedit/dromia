@@ -1,9 +1,7 @@
 class PalindromesController < ApplicationController
-  def index
-    @palindromes = Palindrome.all
-  end
+  before_filter :load_palindromes
 
-  def new
+  def index
     @palindrome = Palindrome.new
   end
 
@@ -15,7 +13,13 @@ class PalindromesController < ApplicationController
       redirect_to palindromes_path
     else
       flash[:alert] = "Your palindrome couldn't be submitted. #{@palindrome.errors.full_messages.join(" ")}"
-      render :new
+      render :index
     end
+  end
+
+  private
+
+  def load_palindromes
+    @palindromes = Palindrome.all
   end
 end
