@@ -6,7 +6,7 @@ class PalindromesController < ApplicationController
   end
 
   def create
-    palindrome_params = params.require(:palindrome).permit(:body)
+    palindrome_params = params.require(:palindrome).permit(:body, :original)
     @palindrome = Palindrome.new(palindrome_params)
     if @palindrome.save
       flash[:notice] = "Your palindrome has been submitted"

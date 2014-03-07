@@ -43,3 +43,7 @@ end
 Given(/^the user "(.*?)" with "(.*?)"$/) do |email, password|
   User.create(email: email, password: password, password_confirmation: password)
 end
+
+When(/^I check the box with an id of "(.*?)"$/) do |id|
+  find(:css, "##{id}").set(true)
+end

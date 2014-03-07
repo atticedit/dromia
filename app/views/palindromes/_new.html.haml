@@ -1,4 +1,6 @@
 = form_for @palindrome do |f|
   = f.label :body, "Enter your palindrome"
   = f.text_field :body
+  = f.check_box :original
+  = f.label :original, "This is my original creation"
   = f.submit "Submit"
