@@ -1,4 +1,3 @@
-@wip
 Feature: Reset the user's password
   As a user
   I want to be able to sign up/sign in/sign out
@@ -9,7 +8,8 @@ Feature: Reset the user's password
 
   Background:
     Given the user "babbage@email.com" with "password"
-    Given I am on the sign in page
+      And I am on the sign in page
+
     When I click "Forgot your password?"
       And I fill in "user_email" with "babbage@email.com"
       And I press "Send me reset password instructions"
@@ -22,16 +22,22 @@ Feature: Reset the user's password
     Then I should see "Change your password"
 
   Scenario: Password reset with matching password confirmation succeeds
-    When I fill in "New password" with "secret"
-      And I fill in "Confirm new password" with "secret"
+    When I fill in "New password" with "secretive"
+      And I fill in "Confirm new password" with "secretive"
       And I press "Change my password"
     Then I should see "Your password was changed successfully. You are now signed in."
 
-    When I sign out
-    Then I should be able to sign in as "babbage@email.com" with the password "secret"
+    When I click "Sign Out"
+    Then I should see "Sign In"
+
+    When I click "Sign In"
+      And I fill in "Email" with "babbage@email.com"
+      And I fill in "Password" with "secretive"
+      And I press "Sign in"
+    Then I should see "Signed in successfully."
 
   Scenario: Trying to reset a password with wrong password confirmation fails
-    When I fill in "New password" with "secret"
-      And I fill in "Confirm new password" with "secretive"
+    When I fill in "New password" with "extrasecretive"
+      And I fill in "Confirm new password" with "extrasecret"
       And I press "Change my password"
     Then I should see "Password confirmation doesn't match Password"

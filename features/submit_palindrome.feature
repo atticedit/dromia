@@ -5,6 +5,7 @@ Feature: Submit a palindrome
 
   Scenario: Trying to submit a blank palindrome fails
     Given I am on the homepage
+
     Then I should see "Enter your palindrome"
 
     When I press "Submit"
@@ -12,6 +13,7 @@ Feature: Submit a palindrome
 
   Scenario: Submitting a palindrome with a body succeeds
     Given I am on the homepage
+
     Then I should see "Enter your palindrome"
 
     When I fill in "Enter your palindrome" with "Do geese see God?"
