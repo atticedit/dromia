@@ -2,8 +2,9 @@ And "show me the page" do
   save_and_open_page
 end
 
-Given(/^the palindrome "(.*?)"$/) do |body|
-  Palindrome.create(body: body)
+Given(/^the palindrome "(.*?)" submitted by (.*?)$/) do |body, username|
+  user = User.create(email: "#{username}@email.com", username: username, password: "password", password_confirmation: "password")
+  Palindrome.create!(body: body, user: user)
 end
 
 Given(/^I am on the sign in page$/) do
@@ -40,10 +41,20 @@ Then(/^I should see "(.*?)" within the palindrome display area$/) do |text|
   end
 end
 
-Given(/^the user "(.*?)" with "(.*?)"$/) do |email, password|
-  User.create(email: email, password: password, password_confirmation: password)
+Given(/^the user "(.*?)"\/"(.*?)" with password of "(.*?)"$/) do |username, email, password|
+  User.create(username: username, email: email, password: password, password_confirmation: password)
 end
 
 When(/^I check the box with an id of "(.*?)"$/) do |id|
   find(:css, "##{id}").set(true)
+end
+
+Given(/^I'm signed in as "(.*?)"$/) do |username|
+  email = "#{username}@email.com"
+  User.create(username: username, email: email, password: "password", password_confirmation: "password")
+  visit new_user_session_path
+  fill_in "Email / Username", with: email
+  fill_in "Password", with: "password"
+  click_button "Sign in"
+  page.should have_content("Signed in successfully")
 end
