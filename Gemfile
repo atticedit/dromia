@@ -14,6 +14,11 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '2.1.1'
 
+group :assets do
+  gem 'compass-rails'
+  # Add any compass extensions here
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
