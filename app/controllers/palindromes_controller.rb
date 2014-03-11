@@ -12,7 +12,7 @@ class PalindromesController < ApplicationController
       flash[:notice] = "Your palindrome has been submitted"
       redirect_to palindromes_path
     else
-      flash[:alert] = "Your palindrome couldn't be submitted. #{@palindrome.errors.full_messages.join(" ")}."
+      flash[:alert] = "Your submission couldn't be accepted. #{@palindrome.errors.full_messages.join(" ")}"
       render :index
     end
   end

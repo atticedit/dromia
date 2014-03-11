@@ -20,7 +20,7 @@ Feature: Submit a palindrome
     Given I'm signed in as "bertrand"
 
     When I press "Submit"
-    Then I should see "Your palindrome couldn't be submitted. Body can't be blank."
+    Then I should see "Your submission couldn't be accepted. Body can't be blank."
 
   Scenario: User can submit a non-original and unique palindrome with a body
     Given I'm signed in as "lois"
@@ -42,14 +42,14 @@ Feature: Submit a palindrome
   Scenario: User can't submit a palindrome twice
     Given I'm signed in as "douglas"
 
-    When I fill in "Enter your palindrome" with "Marge lets Norah see Sharon’s telegram"
+    When I fill in "Enter your palindrome" with "Marge lets Norah see Sharon's telegram"
       And I press "Submit"
     Then I should see "Your palindrome has been submitted"
-      And I should see "Marge lets Norah see Sharon’s telegram | submitted by: douglas" within the palindrome display area
+      And I should see "Marge lets Norah see Sharon's telegram | submitted by: douglas" within the palindrome display area
 
-    When I fill in "Enter your palindrome" with "Marge lets Norah see Sharon’s telegram"
+    When I fill in "Enter your palindrome" with "Marge lets Norah see Sharon's telegram"
       And I press "Submit"
-    Then I should see "Your palindrome couldn't be submitted. Body already exists on Dromia."
+    Then I should see "Your submission couldn't be accepted. Body already exists on Dromia."
 
   Scenario: User can't submit a palindrome a second time with different capitalization
     Given I'm signed in as "gottlob"
@@ -61,7 +61,7 @@ Feature: Submit a palindrome
 
     When I fill in "Enter your palindrome" with "detartrated"
       And I press "Submit"
-    Then I should see "Your palindrome couldn't be submitted. Body already exists on Dromia."
+    Then I should see "Your submission couldn't be accepted. Body already exists on Dromia."
 
   Scenario: User can't submit a palindrome already submitted by another user
     Given I'm signed in as "grace"
@@ -75,4 +75,11 @@ Feature: Submit a palindrome
       And I'm signed in as "vannevar"
       And I fill in "Enter your palindrome" with "Amy, must I jujitsu my ma?"
       And I press "Submit"
-    Then I should see "Your palindrome couldn't be submitted. Body already exists on Dromia."
+    Then I should see "Your submission couldn't be accepted. Body already exists on Dromia."
+
+  Scenario: User can't make a non-palindromic submission
+    Given I'm signed in as "vint"
+
+    When I fill in "Enter your palindrome" with "Oreo"
+      And I press "Submit"
+    Then I should see "Your submission couldn't be accepted. Ignoring punctuation and spaces, the characters should be exactly the same backwards and forwards."
