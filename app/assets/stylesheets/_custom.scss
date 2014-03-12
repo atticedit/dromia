@@ -1,3 +1,135 @@
 body {
   margin: 2rem 2.5rem;
 }
+
+li {
+  list-style: none;
+  text-align: center;
+}
+
+.visualization {
+  margin-bottom: 10px;
+}
+
+.attribution {
+  margin-bottom: 30px;
+}
+
+.visualization {
+  height: 30px;
+  width: 100%;
+}
+
+.letter {
+  height: 30px;
+  width: 20px;
+  display: inline-block;
+}
+
+// vowels
+
+.a {
+  background-color: #ff250a;
+}
+
+.e {
+  background-color: #ff4a14;
+}
+
+.i {
+  background-color: #ff701e;
+}
+
+.o {
+  background-color: #ff9528;
+}
+
+.u {
+  background-color: #ffbb33;
+}
+
+// consonants
+
+.b {
+  background-color: #075589;
+}
+
+.c {
+  background-color: #0e5c8e;
+}
+
+.d {
+  background-color: #166393;
+}
+
+.f {
+  background-color: #1d6a97;
+}
+
+.g {
+  background-color: #24719c;
+}
+
+.h {
+  background-color: #2c79a1;
+}
+
+.j {
+  background-color: #3380a5;
+}
+
+.k {
+  background-color: #3a87aa;
+}
+
+.l {
+  background-color: #428eaf;
+}
+
+.m {
+  background-color: #4995b3;
+}
+
+.n {
+  background-color: #509db8;
+}
+
+.p {
+  background-color: #58a4bd;
+}
+
+.q {
+  background-color: #5fabc1;
+}
+
+.r {
+  background-color: #66b2c6;
+}
+
+.s {
+  background-color: #6eb9cb;
+}
+
+.t {
+  background-color: #75c1cf;
+}
+
+.v {
+  background-color: #7cc8d4;
+}
+
+.w {
+  background-color: #84cfd9;
+}
+
+.x {
+  background-color: #8bd6dd;
+}
+
+.y {
+  background-color: #92dde2;
+}
+
+.z {
+  background-color: #9ae5e7;
+}

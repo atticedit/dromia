@@ -5,4 +5,10 @@
 
 %ul.palindromes
   - @palindromes.each do |palindrome|
-    %li= palindrome.format_body
+    %li.visualization
+      - minimized = palindrome.body.downcase.gsub(/[\s+?!;:.,\-–—"']/, "")
+      - minimized.each_char do |char|
+        - letter = char.gsub(/[\s+?!;:.,\-–—"']/, "")
+        .letter{:class => [letter]}
+    %li= palindrome.body
+    %li.attribution= palindrome.format_attribution

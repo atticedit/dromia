@@ -6,9 +6,9 @@ class Palindrome < ActiveRecord::Base
 
   belongs_to :user
 
-  def format_body
+  def format_attribution
     originality = self.original ? " | original" : ""
     attribution = " | submitted by: #{self.user.username}"
-    body = self.body + originality + attribution
+    originality + attribution
   end
 end
