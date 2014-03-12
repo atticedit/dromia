@@ -1,7 +1,7 @@
 Feature: Submit a palindrome
   As someone who enjoys coming up with palindromes
   I want to submit a palindrome I've created
-  in order to share my creation where it might be appreciated.
+  in order to share my creation where it might be appreciated
 
   Background:
     Given I am on the homepage

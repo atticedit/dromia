@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :palindromes
+  has_many :favorites
+  has_many :palindromes, through: :favorites
 
   def self.find_for_database_authentication(conditions)
     self.where(:username => conditions[:email]).first || self.where(:email => conditions[:email]).first

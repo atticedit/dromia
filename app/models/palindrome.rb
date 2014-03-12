@@ -5,6 +5,8 @@ class Palindrome < ActiveRecord::Base
   validates :body, palindromicness: true # <-- custom palindromicness validator
 
   belongs_to :user
+  has_many :favorites
+  has_many :users, through: :favorites
 
   def format_attribution
     originality = self.original ? " | original" : ""

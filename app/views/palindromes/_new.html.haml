@@ -3,4 +3,5 @@
   = f.text_field :body
   = f.check_box :original
   = f.label :original, "This is my original creation"
+  = f.hidden_field :user_id, value: current_user.id
   = f.submit "Submit"

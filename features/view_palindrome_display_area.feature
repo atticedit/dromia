@@ -4,9 +4,9 @@ Feature: View the palindrome display area
   I want to see palindromes on the homepage
 
   Scenario: Homepage displays the palindrome display area
-    Given the palindrome "Now I draw an award I won" submitted by Alan
-      And the palindrome "Senile felines" submitted by Sergei
+    Given there is the palindrome "Now I draw an award I won" submitted by alan
+      And there is the palindrome "Senile felines" submitted by sergei
       And I am on the homepage
 
-    Then I should see "Now I draw an award I won | submitted by: Alan" within the palindrome display area
-      And I should see "Senile felines | submitted by: Sergei" within the palindrome display area
+    Then I should see "Now I draw an award I won | submitted by: alan" within the palindrome display area
+      And I should see "Senile felines | submitted by: sergei" within the palindrome display area

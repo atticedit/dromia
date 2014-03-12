@@ -11,4 +11,16 @@
         - letter = char.gsub(/[\s+?!;:.,\-–—"']/, "")
         .letter{:class => [letter]}
     %li= palindrome.body
-    %li.attribution= palindrome.format_attribution
+    %li= palindrome.format_attribution
+
+    /  below is a work in progress
+
+    / - if current_user
+    /   %li
+    /     = form_for favorite(palindrome) do |f|
+    /       - if favorite(palindrome).new_record?
+    /         = f.hidden_field :user_id, value: current_user.id
+    /         = f.hidden_field :palindrome_id, value: palindrome.id
+    /         = f.submit "Favorite"
+    /       - else
+    /         = button_to "Unfavorite", favorite_path(favorite palindrome), { method: :delete}

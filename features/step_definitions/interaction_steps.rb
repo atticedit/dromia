@@ -1,10 +1,10 @@
-And "show me the page" do
+Then "show me the page" do
   save_and_open_page
 end
 
-Given(/^the palindrome "(.*?)" submitted by (.*?)$/) do |body, username|
+Given(/^there is the palindrome "(.*?)" submitted by (.*?)$/) do |body, username|
   user = User.create(email: "#{username}@email.com", username: username, password: "password", password_confirmation: "password")
-  Palindrome.create!(body: body, user: user)
+  Palindrome.create!(body: body, user_id: user.id)
 end
 
 Given(/^I am on the sign in page$/) do
@@ -57,4 +57,16 @@ Given(/^I'm signed in as "(.*?)"$/) do |username|
   fill_in "Password", with: "password"
   click_button "Sign in"
   page.should have_content("Signed in successfully")
+end
+
+Then(/^I should see (?:a|an) "(.*?)" button$/) do |button_text|
+  page.should have_selector("input[value='#{button_text}']")
+end
+
+Then(/^I should not see (?:a|an) "(.*?)" button$/) do |button_text|
+  page.should_not have_selector("input[value='#{button_text}']")
+end
+
+When(/^I am on the favorites page$/) do
+  visit favorites_path
 end

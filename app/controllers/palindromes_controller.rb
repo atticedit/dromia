@@ -6,7 +6,6 @@ class PalindromesController < ApplicationController
   end
 
   def create
-    palindrome_params = params.require(:palindrome).permit(:body, :original)
     @palindrome = current_user.palindromes.new(palindrome_params)
     if @palindrome.save
       flash[:notice] = "Your palindrome has been submitted"
@@ -19,7 +18,18 @@ class PalindromesController < ApplicationController
 
   private
 
+  def palindrome_params
+    params.require(:palindrome).permit(:body, :original, :user_id)
+  end
+
   def load_palindromes
     @palindromes = Palindrome.all
   end
+
+  def favorite(palindrome)
+    favorite = Favorite.where(user: current_user, palindrome: palindrome).first
+    favorite = Favorite.new unless favorite
+    favorite
+  end
+  helper_method :favorite
 end
