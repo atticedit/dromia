@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140312043009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  # favorites feature is a work in progress
   create_table "favorites", force: true do |t|
     t.integer  "user_id"
     t.integer  "palindrome_id"

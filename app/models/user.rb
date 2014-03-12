@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :palindromes
+  # favorites feature is a work in progress
   has_many :favorites
   has_many :palindromes, through: :favorites
 

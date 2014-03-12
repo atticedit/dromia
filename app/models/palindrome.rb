@@ -5,6 +5,7 @@ class Palindrome < ActiveRecord::Base
   validates :body, palindromicness: true # <-- custom palindromicness validator
 
   belongs_to :user
+  # favorites feature is a work in progress
   has_many :favorites
   has_many :users, through: :favorites
 

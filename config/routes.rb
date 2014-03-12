@@ -6,6 +6,7 @@ Dromia::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'palindromes#index'
   resources :palindromes, only: [:index, :create]
+  # favorites feature is a work in progress
   resources :favorites, only: [:create, :destroy, :index]
 
   # Example of regular route:

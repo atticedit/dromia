@@ -26,6 +26,7 @@ class PalindromesController < ApplicationController
     @palindromes = Palindrome.all
   end
 
+  # favorites feature is a work in progress
   def favorite(palindrome)
     favorite = Favorite.where(user: current_user, palindrome: palindrome).first
     favorite = Favorite.new unless favorite
