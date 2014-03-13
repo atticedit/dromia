@@ -37,7 +37,7 @@ Feature: Authenticate the user
 
     When I click "Sign Out"
       And I click "Sign In"
-      And I fill in "Email / Username" with "george"
+      And I fill in "Email" with "george@email.com"
       And I fill in "Password" with "booleanalgebra"
       And I press "Sign in"
     Then I should see "Signed in successfully."
@@ -47,7 +47,7 @@ Feature: Authenticate the user
       And I am on the homepage
 
     When I click "Sign In"
-      And I fill in "Email / Username" with "george@email.com"
+      And I fill in "Email" with "george@email.com"
       And I fill in "Password" with "booleanalgebra"
       And I press "Sign in"
     Then I should see "Signed in successfully."
@@ -59,7 +59,7 @@ Feature: Authenticate the user
       And I am on the homepage
 
     When I click "Sign In"
-      And I fill in "Email / Username" with "george"
+      And I fill in "Email" with "george@email.com"
       And I fill in "Password" with "booleanalgebra"
       And I press "Sign in"
     Then I should see "Signed in successfully."
