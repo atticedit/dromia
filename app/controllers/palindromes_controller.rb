@@ -23,7 +23,7 @@ class PalindromesController < ApplicationController
   end
 
   def load_palindromes
-    @palindromes = Palindrome.all
+    @palindromes = Palindrome.order('palindromes.created_at DESC').all
   end
 
   # favorites feature is a work in progress
