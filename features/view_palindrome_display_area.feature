@@ -1,3 +1,4 @@
+@wip
 Feature: View the palindrome display area
   In order for the application to be engaging
   As a site visitor
@@ -8,5 +9,7 @@ Feature: View the palindrome display area
       And there is the palindrome "Senile felines" submitted by sergei
       And I am on the homepage
 
-    Then I should see "Now I draw an award I won | submitted by: alan" within the palindrome display area
-      And I should see "Senile felines | submitted by: sergei" within the palindrome display area
+    Then I should see "Now I draw an award I won" within the palindrome display area
+      And I should see "submitted by: alan" within the palindrome display area
+      And I should see "Senile felines" within the palindrome display area
+      And I should see "submitted by: sergei" within the palindrome display area

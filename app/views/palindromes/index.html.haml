@@ -1,17 +1,23 @@
-- if user_signed_in?
-  = render partial: "palindromes/new"
-- else
-  %p Sign in or Sign up to submit a palindrome
+.message
+  - if user_signed_in?
+    = render partial: "palindromes/new"
+  - else
+    %h3 Sign in or sign up to submit a palindrome
 
-%ul.palindromes
+
+.palindromes.display.plateau
   - @palindromes.each do |palindrome|
-    %li.visualization
+    %p.attribution= palindrome.format_attribution
+    .visualization
       - minimized = palindrome.body.downcase.gsub(/[\s+?!;:.,\-–—"']/, "")
       - minimized.each_char do |char|
         - letter = char.gsub(/[\s+?!;:.,\-–—"']/, "")
         .letter{:class => [letter]}
-    %li= palindrome.body
-    %li= palindrome.format_attribution
+    .expanded
+      - depunctuated = palindrome.body.downcase.gsub(/[\?!;:.,\-–—"']/, "")
+      - depunctuated.downcase.each_char do |char2|
+        .letter{:class => [char2]}
+      %p.body= palindrome.body
 
     / / favorites feature is a work in progress
 

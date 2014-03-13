@@ -1,3 +1,4 @@
+@wip
 Feature: Submit a palindrome
   As someone who enjoys coming up with palindromes
   I want to submit a palindrome I've created
@@ -28,7 +29,8 @@ Feature: Submit a palindrome
     When I fill in "Enter your palindrome" with "Do geese see God?"
       And I press "Submit"
     Then I should see "Your palindrome has been submitted"
-      And I should see "Do geese see God? | submitted by: lois" within the palindrome display area
+      And I should see "Do geese see God?" within the palindrome display area
+      And I should see "submitted by: lois" within the palindrome display area
 
   Scenario: User can submit an original and unique palindrome with a body
     Given I'm signed in as "tommy"
@@ -37,7 +39,8 @@ Feature: Submit a palindrome
       And I check the box with an id of "palindrome_original"
       And I press "Submit"
     Then I should see "Your palindrome has been submitted"
-      And I should see "Dr. Awkward | original | submitted by: tommy" within the palindrome display area
+      And I should see "Dr. Awkward" within the palindrome display area
+      And I should see "original | submitted by: tommy" within the palindrome display area
 
   Scenario: User can't submit a palindrome twice
     Given I'm signed in as "douglas"
@@ -45,7 +48,8 @@ Feature: Submit a palindrome
     When I fill in "Enter your palindrome" with "Marge lets Norah see Sharon's telegram"
       And I press "Submit"
     Then I should see "Your palindrome has been submitted"
-      And I should see "Marge lets Norah see Sharon's telegram | submitted by: douglas" within the palindrome display area
+      And I should see "Marge lets Norah see Sharon's telegram" within the palindrome display area
+      And I should see "submitted by: douglas" within the palindrome display area
 
     When I fill in "Enter your palindrome" with "Marge lets Norah see Sharon's telegram"
       And I press "Submit"
@@ -57,7 +61,8 @@ Feature: Submit a palindrome
     When I fill in "Enter your palindrome" with "Detartrated"
       And I press "Submit"
     Then I should see "Your palindrome has been submitted"
-      And I should see "Detartrated | submitted by: gottlob" within the palindrome display area
+      And I should see "Detartrated" within the palindrome display area
+      And I should see "submitted by: gottlob" within the palindrome display area
 
     When I fill in "Enter your palindrome" with "detartrated"
       And I press "Submit"
@@ -69,7 +74,8 @@ Feature: Submit a palindrome
     When I fill in "Enter your palindrome" with "Amy, must I jujitsu my ma?"
       And I press "Submit"
     Then I should see "Your palindrome has been submitted"
-      And I should see "Amy, must I jujitsu my ma? | submitted by: grace" within the palindrome display area
+      And I should see "Amy, must I jujitsu my ma?" within the palindrome display area
+      And I should see "submitted by: grace" within the palindrome display area
 
     When I click "Sign Out"
       And I'm signed in as "vannevar"

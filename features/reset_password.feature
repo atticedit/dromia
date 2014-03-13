@@ -1,3 +1,4 @@
+@wip
 Feature: Reset the user's password
   As a user
   I want to be able to sign up/sign in/sign out

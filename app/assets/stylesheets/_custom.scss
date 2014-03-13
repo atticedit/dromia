@@ -1,22 +1,143 @@
+@import url(http://fonts.googleapis.com/css?family=Expletus+Sans:400,600);
+
 body {
-  margin: 2rem 2.5rem;
+  margin: 2rem 4rem;
+  background-color: #879ba2;
+}
+
+.title {
+  font-family: 'Expletus Sans', sans-serif;
+  text-align: center;
+  font-size: rem-calc(72);
+  color: #fff;
+  margin: 2rem 0;
+  position: relative;
+  top: 1rem;
+}
+
+.plateau {
+  background: #fff;
+  margin: 0 auto;
+  padding: 4rem 0;
+  border: 1px solid #668896;
+}
+
+.display {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  -moz-box-shadow:    0 0 18px 5px #526369;
+  -webkit-box-shadow: 0 0 18px 5px #526369;
+  box-shadow:         0 0 18px 5px #526369;
+}
+
+.input {
+  background: #d4dbde; /* Old browsers */
+  background: -moz-linear-gradient(top, #d4dbde 0%, #edf4f7 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d4dbde), color-stop(100%,#edf4f7)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d4dbde 0%,#edf4f7 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d4dbde 0%,#edf4f7 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d4dbde 0%,#edf4f7 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #d4dbde 0%,#edf4f7 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4dbde', endColorstr='#edf4f7',GradientType=0 ); /* IE6-9 */
+  -moz-box-shadow:    0 0 13px 2px #63787f;
+  -webkit-box-shadow: 0 0 13px 2px #63787f;
+  box-shadow:         0 0 13px 2px #63787f;
+
+  .formheader {
+    font-size: rem-calc(30);
+    font-weight: bold;
+    text-align: center;
+    margin: -2rem 0 1rem 0;
+  }
+
+  .field {
+    padding: 1rem 3rem;
+    margin-bottom: -1rem;
+  }
+
+  label {
+    padding: 0 3rem;
+    font-size: rem-calc(22);
+  }
+
+  .submit {
+  position: absolute;
+  width: 50%;
+  right: 2rem;
+  padding-top: 0.5625rem;
+
+    // .press {
+    //   height: 1rem;
+    // }
+  }
+
+  h2 {
+    text-align: center;
+  }
 }
 
 li {
   list-style: none;
-  text-align: center;
 }
 
-.visualization {
-  height: 30px;
-  width: 100%;
-  margin: 30px 0 15px 0;
+.visualization, .expanded {
+  margin: 1.875rem 0 4rem 0;
+  padding-right: 1.25rem;
+}
+
+.expanded {
+  background-color: #fff;
+  position: relative;
+  bottom: 6rem;
+  margin-bottom: -0.375rem;
+  opacity: 0;
+}
+
+.expanded:hover {
+  opacity: 1;
+
+  .body {
+  font-size: rem-calc(30);
+  position: relative;
+  top: 1rem;
+  margin-bottom: -0.5625rem;
+  }
 }
 
 .letter {
   height: 30px;
-  width: 20px;
+  width: 18px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   display: inline-block;
+}
+
+.attribution {
+  font-size: rem-calc(20);
+  color: #668896;
+}
+
+.devisings {
+  font-size: rem-calc(20);
+  position: absolute;
+  top: 1rem;
+  right: 0;
+
+  span {
+    right: 0.5rem;
+  }
+}
+
+h3 {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: #03273e;
+}
+
+span {
+  padding-right: 1rem;
 }
 
 // vowels
