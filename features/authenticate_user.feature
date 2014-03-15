@@ -1,4 +1,3 @@
-@wip
 Feature: Authenticate the user
   As a user
   I want to be able to sign up/sign in/sign out
@@ -16,8 +15,7 @@ Feature: Authenticate the user
       And I fill in "Password" with "bernoullicalculations"
       And I fill in "Password confirmation" with "bernoullicalculations"
       And I press "Sign up"
-    Then I should see "Welcome! You have signed up successfully."
-      And I should see "Sign Out"
+    Then I should see "Sign Out"
       And I should not see "Sign In"
       And I should not see "Sign Up"
 
@@ -34,7 +32,8 @@ Feature: Authenticate the user
       And I fill in "Password" with "booleanalgebra"
       And I fill in "Password confirmation" with "booleanalgebra"
       And I press "Sign up"
-    Then I should see "Welcome! You have signed up successfully."
+    Then I should see "Sign Out"
+      And I should not see "Sign In"
 
     When I click "Sign Out"
       And I click "Sign In"

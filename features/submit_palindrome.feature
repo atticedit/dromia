@@ -1,4 +1,3 @@
-@wip
 Feature: Submit a palindrome
   As someone who enjoys coming up with palindromes
   I want to submit a palindrome I've created
@@ -8,14 +7,14 @@ Feature: Submit a palindrome
     Given I am on the homepage
 
   Scenario: User isn't logged in
-    Then I should see "Sign in or Sign up to submit a palindrome"
+    Then I should see "Sign in or sign up to submit a palindrome"
       And I should not see "Enter your palindrome"
 
   Scenario: User who's logged in isn't prompted to log in
     Given I'm signed in as "emil"
 
     Then I should see "Enter your palindrome"
-      And I should not see "Sign in or Sign up to submit a palindrome"
+      And I should not see "Sign in or sign up to submit a palindrome"
 
  Scenario: User can't submit a blank palindrome
     Given I'm signed in as "bertrand"
@@ -23,32 +22,20 @@ Feature: Submit a palindrome
     When I press "Submit"
     Then I should see "Your submission couldn't be accepted. Body can't be blank."
 
-  Scenario: User can submit a non-original and unique palindrome with a body
+  Scenario: User can submit a unique palindrome with a body
     Given I'm signed in as "lois"
 
     When I fill in "Enter your palindrome" with "Do geese see God?"
       And I press "Submit"
-    Then I should see "Your palindrome has been submitted"
-      And I should see "Do geese see God?" within the palindrome display area
+    Then I should see "Do geese see God?" within the palindrome display area
       And I should see "submitted by: lois" within the palindrome display area
-
-  Scenario: User can submit an original and unique palindrome with a body
-    Given I'm signed in as "tommy"
-
-    When I fill in "Enter your palindrome" with "Dr. Awkward"
-      And I check the box with an id of "palindrome_original"
-      And I press "Submit"
-    Then I should see "Your palindrome has been submitted"
-      And I should see "Dr. Awkward" within the palindrome display area
-      And I should see "original | submitted by: tommy" within the palindrome display area
 
   Scenario: User can't submit a palindrome twice
     Given I'm signed in as "douglas"
 
     When I fill in "Enter your palindrome" with "Marge lets Norah see Sharon's telegram"
       And I press "Submit"
-    Then I should see "Your palindrome has been submitted"
-      And I should see "Marge lets Norah see Sharon's telegram" within the palindrome display area
+    Then I should see "Marge lets Norah see Sharon's telegram" within the palindrome display area
       And I should see "submitted by: douglas" within the palindrome display area
 
     When I fill in "Enter your palindrome" with "Marge lets Norah see Sharon's telegram"
@@ -60,8 +47,7 @@ Feature: Submit a palindrome
 
     When I fill in "Enter your palindrome" with "Detartrated"
       And I press "Submit"
-    Then I should see "Your palindrome has been submitted"
-      And I should see "Detartrated" within the palindrome display area
+    Then I should see "Detartrated" within the palindrome display area
       And I should see "submitted by: gottlob" within the palindrome display area
 
     When I fill in "Enter your palindrome" with "detartrated"
@@ -73,8 +59,7 @@ Feature: Submit a palindrome
 
     When I fill in "Enter your palindrome" with "Amy, must I jujitsu my ma?"
       And I press "Submit"
-    Then I should see "Your palindrome has been submitted"
-      And I should see "Amy, must I jujitsu my ma?" within the palindrome display area
+    Then I should see "Amy, must I jujitsu my ma?" within the palindrome display area
       And I should see "submitted by: grace" within the palindrome display area
 
     When I click "Sign Out"

@@ -20,6 +20,12 @@ body {
   margin: 0 auto;
   padding: 4rem 0;
   border: 1px solid #668896;
+
+  a {
+    color: #668896;
+    position: relative;
+    left: 3rem;
+  }
 }
 
 .display {
@@ -62,14 +68,10 @@ body {
   }
 
   .submit {
-  position: absolute;
-  width: 50%;
-  right: 2rem;
-  padding-top: 0.5625rem;
-
-    // .press {
-    //   height: 1rem;
-    // }
+    position: absolute;
+    width: 50%;
+    right: 2rem;
+    padding-top: 0.5625rem;
   }
 
   h2 {

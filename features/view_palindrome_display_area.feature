@@ -1,4 +1,3 @@
-@wip
 Feature: View the palindrome display area
   In order for the application to be engaging
   As a site visitor
