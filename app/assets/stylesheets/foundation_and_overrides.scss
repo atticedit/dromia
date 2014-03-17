@@ -163,8 +163,8 @@ $h1-font-size: rem-calc(52);
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
-$anchor-font-color: #fff;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-font-color: #ffbb33;
+$anchor-font-color-hover: scale-color(#ffbb33, $lightness: -18%);
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
