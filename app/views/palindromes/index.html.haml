@@ -9,14 +9,10 @@
   - @palindromes.each do |palindrome|
     %p.attribution= palindrome.format_attribution
     .visualization
-      - minimized = palindrome.body.downcase.gsub(/[\s+?!;:.,\-–—"']/, "")
-      - minimized.each_char do |char|
-        - letter = char.gsub(/[\s+?!;:.,\-–—"']/, "")
-        .letter{:class => [letter]}
-    .expanded
       - depunctuated = palindrome.body.downcase.gsub(/[\?!;:.,\-–—"']/, "")
-      - depunctuated.downcase.each_char do |char2|
-        .letter{:class => [char2]}
+      - depunctuated.downcase.each_char do |char|
+        - char = "space" if char.blank?
+        .letter{:class => [char]}
       %p.body= palindrome.body
 
     / / favorites feature is a work in progress
