@@ -83,29 +83,27 @@ li {
 }
 
 .visualization {
-  margin: 1.875rem 0 4rem 0;
+  margin: 2.5rem 0 4rem 0;
   padding-right: 1.25rem;
   background-color: #fff;
 
   .body {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     font-size: rem-calc(30);
+    letter-spacing: 2px;
     opacity: 0;
-    transition: opacity 0.2s ease-in 0.2s,
-                letter-spacing 0.5s ease 1.2s;
+    transition: opacity 100ms ease-in 300ms;
   }
 
   .space {
     width: 0;
     margin: 0 -0.125rem;
-    transition: width 0.2s;
+    transition: width 200ms ease;
   }
 }
 
 .visualization:hover {
-
   .body {
-    letter-spacing: 5px;
     opacity: 1;
   }
 
