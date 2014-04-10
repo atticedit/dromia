@@ -8,7 +8,6 @@ class PalindromesController < ApplicationController
   def create
     @palindrome = current_user.palindromes.new(palindrome_params)
     if @palindrome.save
-      # flash[:notice] = "Your palindrome has been submitted"
       redirect_to palindromes_path
     else
       flash[:alert] = "Your submission couldn't be accepted. #{@palindrome.errors.full_messages.join(" ")}"
