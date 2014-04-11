@@ -45,32 +45,36 @@ body {
   background: -ms-linear-gradient(top, #d4dbde 0%,#edf4f7 100%); /* IE10+ */
   background: linear-gradient(to bottom, #d4dbde 0%,#edf4f7 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4dbde', endColorstr='#edf4f7',GradientType=0 ); /* IE6-9 */
+  padding-left: 1rem;
+  padding-right: 1rem;
   -moz-box-shadow:    0 0 13px 2px #63787f;
   -webkit-box-shadow: 0 0 13px 2px #63787f;
   box-shadow:         0 0 13px 2px #63787f;
 
   .formheader {
-    font-size: rem-calc(30);
-    font-weight: bold;
     text-align: center;
     margin: -2rem 0 1rem 0;
   }
 
-  .field {
-    padding: 1rem 3rem;
-    margin-bottom: -1rem;
-  }
-
   label {
-    padding: 0 3rem;
     font-size: rem-calc(22);
   }
 
+  .originality {
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    font-size: rem-calc(17);
+    color: #606060;
+  }
+
   .submit {
-    position: absolute;
-    width: 50%;
-    right: 2rem;
-    padding-top: 0.5625rem;
+    width: 100%;
+    margin: 1rem 0 -3rem 0;
+  }
+
+  .checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   h2 {

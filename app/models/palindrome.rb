@@ -10,8 +10,8 @@ class Palindrome < ActiveRecord::Base
   has_many :users, through: :favorites
 
   def format_attribution
-    originality = self.original ? "original" : ""
-    attribution = self.original ?  " | submitted by: #{self.user.username}" : "submitted by: #{self.user.username}"
+    originality = self.original ? "an original " : ""
+    attribution = "submitted by: #{self.user.username}"
     originality + attribution
   end
 end

@@ -1,9 +1,16 @@
 .input.plateau
   = form_for @palindrome do |f|
-    .formheader
-      = f.label :body, "Enter your palindrome"
-    .field
-      = f.text_field :body
-    = f.hidden_field :user_id, value: current_user.id
-    .submit
-      = f.submit "Submit"
+    .row
+      .small-12.columns
+        = f.label :body, "Enter your palindrome", class: "formheader"
+    .row
+      .small-12.columns
+        = f.text_field :body
+        = f.hidden_field :user_id, value: current_user.id
+    .row
+      .small-12.columns
+        = f.check_box :original, class: "checkbox"
+        = f.label :original, "This is my original creation", class: "originality"
+    .row
+      .small-12.columns
+        = f.submit "Submit", class: "submit button radius"
